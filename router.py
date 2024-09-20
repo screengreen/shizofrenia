@@ -9,7 +9,7 @@ router = APIRouter(
     tags=['таски']
 )
 
-@router.post("/get_response")
+@router.get("/get_response")
 async def get_response(
     input_: InputData 
 )-> dict:
