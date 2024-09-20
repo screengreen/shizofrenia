@@ -2,8 +2,7 @@ import joblib
 
 class TestModel():
     def __call__(self, input_):
-        print(input_)
-        return input_
+        return f'i got input: {input_}'
     
 
 class ResponseModel():
