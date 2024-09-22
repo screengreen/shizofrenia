@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from models import model_loader
+from model.models import model_loader
 
 from shemas import InputData
 

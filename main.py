@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from router import router as task_router
-from models import model_loader
+from model.models import model_loader
 # from app.utils.fastapi_globals import g
 
 @asynccontextmanager
