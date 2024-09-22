@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Python application
+name: Build on PROD
 
 on:
   push:
@@ -37,5 +37,22 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    # Шаг 7: Логин в Docker Hub
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+    
+    - name: Build Docker image
+      run: |
+        docker build \
+        -t ${{ secrets.DOCKER_HUB_USERNAME }}/chatgpt-online-learning-app:latest . 
+    
+    # Шаг 9: Push Docker image в Docker Hub
+    - name: Push Docker image
+      run: |
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/chatgpt-online-learning-app:latest
+
 
 

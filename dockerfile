@@ -15,6 +15,8 @@ RUN poetry config virtualenvs.create false && poetry install
 # Copy the rest of the application code
 COPY . .
 
+# Открываем порт 8000
+EXPOSE 8000
 
 # CMD ["pip", "list"]
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
