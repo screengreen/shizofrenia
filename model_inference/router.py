@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
-from model.models import model_loader
+from model_inference.model.models import model_loader
 
-from shemas import InputData
+from model_inference.shemas import InputData
 
 model = model_loader.load_model()
 router = APIRouter(

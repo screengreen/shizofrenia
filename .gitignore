@@ -1,3 +1,7 @@
+te.py
+test_train_model.ipynb
+train_model.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

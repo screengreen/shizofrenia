@@ -1,4 +1,4 @@
-from ..model.models import TestModel
+from model_inference.model.models import TestModel
 
 
 def test_TestModel():
